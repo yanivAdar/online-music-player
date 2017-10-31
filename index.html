@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>My Awesome Player</title>
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/circletype.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <nav class="container-fluid navbar navbar-default navbar-fixed-top">
+        <div class="row ui-widget">
+            <div class="nav-center hidden-lg hidden-md hidden-sm col-xs-12">MY AWESOME MUSIC PLAYER</div>
+            <h5 id="newPlaylist" class="myh5 col-md-4 col-sm-4 col-xs-6" data-toggle="modal" data-target="#myModal">
+                <span class="glyphicon glyphicon-plus-sign"></span> Add A New Playlist</h5>
+            <div class="nav-center col-md-4 col-sm-4 hidden-xs">MY AWESOME MUSIC PLAYER</div>
+            <span class="ui-widget input-group col-md-4 col-sm-4 col-xs-6" id="srch-pos">
+                <input type="text" id="searchBar" class="search-query form-control searchBar-design" placeholder="Search" />
+                <span id="searchBtn" class="input-group-btn">
+                    <button class="btn btn-danger searchBar-design" type="button">
+                        <span class=" glyphicon glyphicon-search"></span>
+                    </button>
+                </span>
+            </span>
+        </div>
+        </div>
+    </nav>
+
+    <main>
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog myDialog">
+                <div class="modal-content myModal">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Add New Playlist</h4>
+                    </div>
+                    <div class="modal-body ">
+                        <div class="inputs">
+                            <label for="plyName">Playlist Name</label>
+                            <input id="plyName" type="text" class="form-control" />
+                            <label for="plyUrl">Playlist URL</label>
+                            <input id="plyUrl" type="text" class="form-control" />
+                        </div>
+                        <div>
+                            <img class="PlaylistPic" src="Media/Pictures/a37b37d99e7cef805f354d47.noimage_thumbnail.png" alt="preview">
+                        </div>
+                        <div class="btns">
+                            <button type="button" id="nextModal" class="btn btn-default" data-dismiss="modal" data-toggle="modal" data-target="#myNextModal">Next</button>
+                            <button type="button" class="btn btn-default">Reset Fields</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div id="myNextModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Add Playlist Songs</h4>
+                    </div>
+                    <div class="modal-body ">
+                        <div class="newInputs">
+                            <table id="playlistSongList">
+                            </table>
+                        </div>
+                        <div>
+                            <span id="addSong">
+                                <span class="glyphicon glyphicon-plus-sign"></span> Add Another Song</span>
+                            <button type="button" id="finish" class="btn btn-default newBtns" data-dismiss="modal">Finish and Save</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div id="myAreYouSureModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body ">
+                        <h4>Are you sure you want to destroy
+                            <b>
+                                <span id="deletePlaylist">Example</playlist>
+                            </b> playlist?</h4>
+                        <div>
+                            <button type="button" id="delete" class="btn btn-danger" data-dismiss="modal">
+                                <span class="glyphicon glyphicon-fire"></span> destroy</button>
+                            <button type="button" id="notDelete" class="btn btn-default spareBtn" data-dismiss="modal">I Decided to spare it</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 jukeBox navbar-fixed-top">
+            <div id="playlistImage" class="single-playlist col-lg-3 col-md-3 hidden-sm hidden-xs"></div>
+            <div class="col-lg-7 col-md-6 col-offset-sm-3 col-offset-xs-3 col-sm-12 col-xs-12">
+                <audio id="audio" controls controlsList="nodownload" class="myAudio col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <source type="audio/ogg" />
+                </audio>
+                <h2>NOW PLAYING: </br>
+                    <span id="playingNow">Example</span>
+                </h2>
+                <div>
+                    <ol id="songsList">
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="main-playlist">
+        </div>
+    </main>
+</body>
+
+</html>
