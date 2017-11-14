@@ -136,6 +136,13 @@ $(document).ready(() => {
         })
     }
 
+    const emptyInputs = () => {
+        $('.reset').click(() => {
+            $('#plyUrl').val('');
+            $('#plyName').val('');
+        })
+    }
+
     const removeEdit = () => {
         $('.small-circle').off('click');
         $('.small-circle').click(e => {
@@ -164,6 +171,7 @@ $(document).ready(() => {
         g_AllPlaylistObjArray[id].songs.forEach((x) => {
             appendModalSongsList(x.url, x.name);
         })
+        emptyInputs();        
     }
 
     //---------clicking anywhere to make the Jukebox disappear
